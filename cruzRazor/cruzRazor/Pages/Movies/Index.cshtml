@@ -1,0 +1,55 @@
+﻿@page
+@model cruzRazor.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-info" asp-page="Create">Create New</a>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Peliculas[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peliculas[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peliculas[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peliculas[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Peliculas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                    <a asp-page="./Edit" class="btn btn-warning" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
