@@ -19,13 +19,38 @@ namespace crudMVC.Controllers
         }
 
         // GET: Usuarios
-        public async Task<IActionResult> Index(string buscar)
+        public async Task<IActionResult> Index(string buscar, string filtrar)
         {
             var usuarios = from USUARIO in _context.Usuarios select USUARIO;
+
             if (!String.IsNullOrEmpty(buscar))
             {
                 usuarios = usuarios.Where(s => s.Nombre!.Contains(buscar));
             }
+            ViewData["FiltroNombre"] = String.IsNullOrEmpty(filtrar) ? "NombreDescendente" : "";
+            ViewData["FiltroFecha"] = filtrar == "FechaAscendente" ? "FechaDescendente" : "FechaAscendente";
+
+            switch(filtrar)
+            {
+                case "NombreDescendente":
+                    usuarios = usuarios.OrderByDescending(usuario => usuario.Nombre);
+                    break;
+
+                case "FechaDescendente":
+                    usuarios = usuarios.OrderByDescending(usuarios => usuarios.Fecha);
+                    break;
+
+                case "FechaAscendente":
+                    usuarios = usuarios.OrderBy(usuarios => usuarios.Fecha);
+                    break;
+
+                default:
+                    usuarios = usuarios.OrderByDescending(usuario => usuario.Nombre);
+                    break;
+            }
+
+
+
             return View(await usuarios.ToListAsync());
         }
 

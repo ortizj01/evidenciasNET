@@ -1,0 +1,7 @@
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\bin\Debug\Lavadora3000.exe.config
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\bin\Debug\Lavadora3000.exe
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\bin\Debug\Lavadora3000.pdb
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\obj\Debug\Lavadora3000.csproj.AssemblyReference.cache
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\obj\Debug\Lavadora3000.csproj.CoreCompileInputs.cache
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\obj\Debug\Lavadora3000.exe
+C:\Users\juane\OneDrive\Desktop\NET\Lavadora3000\Lavadora3000\obj\Debug\Lavadora3000.pdb

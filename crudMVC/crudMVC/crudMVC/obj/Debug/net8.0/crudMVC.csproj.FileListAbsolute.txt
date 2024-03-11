@@ -259,3 +259,4 @@ C:\webNet\crudMVC\crudMVC\crudMVC\bin\Debug\net8.0\runtimes\win\lib\net7.0\Syste
 C:\webNet\crudMVC\crudMVC\crudMVC\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\webNet\crudMVC\crudMVC\crudMVC\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\webNet\crudMVC\crudMVC\crudMVC\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\webNet\crudMVC\crudMVC\crudMVC\obj\Debug\net8.0\crudMVC.sourcelink.json

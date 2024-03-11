@@ -259,3 +259,4 @@ C:\webNet\cruzRazor\cruzRazor\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Se
 C:\webNet\cruzRazor\cruzRazor\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\webNet\cruzRazor\cruzRazor\obj\Debug\net8.0\cruzRazor.csproj.AssemblyReference.cache
 C:\webNet\cruzRazor\cruzRazor\obj\Debug\net8.0\cruzRazor.csproj.CopyComplete
+C:\webNet\cruzRazor\cruzRazor\obj\Debug\net8.0\cruzRazor.sourcelink.json

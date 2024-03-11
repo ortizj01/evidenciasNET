@@ -20,10 +20,15 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                <!--Enlazamos cada columna a ordenar con el view dara del controller-->
+                <a asp-action="Index" asp-route-filtro="@ViewData["FiltroNombre"]">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fecha)
+                <a asp-action="Index" asp-route-filtro="@ViewData["FiltroFecha"]">
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Clave)
