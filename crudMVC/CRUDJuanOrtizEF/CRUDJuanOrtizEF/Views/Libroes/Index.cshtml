@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CRUDJuanOrtizEF.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Libro</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Libro</a>
+</p>
+
+<form asp-controller="Libroes" asp-action="Index">
+    <p>
+        Buscar: <input type="text" name="buscar" class="form-text"/>
+        <input type="submit" value="buscar" class="btn btn-sm btn-dark"/>
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreAutor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoCategoriaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NitEditorialNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreAutor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCategoriaNavigation.CodigoCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NitEditorialNavigation.Nit)
+            </td>
+            <td>
+                    <a asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.Isbn">Editar</a> |
+                    <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.Isbn">Detalles</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.Isbn">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<CRUDJuanOrtizEF.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categoria</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Categoria</a>
+</p>
+
+<form asp-controller="Categorias" asp-action="Index">
+    <p>
+        Buscar: <input type="text" name="buscar" class="form-text" />
+        <input type="submit" value="buscar" class="btn btn-sm btn-dark" />
+    </p>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-filtro="@ViewData["FiltroNombre"]">
+                @Html.DisplayNameFor(model => model.Nombre)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                    <a asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.CodigoCategoria">Editar</a> |
+                    <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.CodigoCategoria">Detalles</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm"
+                       asp-route-id="@item.CodigoCategoria">Eliminar</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@* <script>
+    function AlertaDeleteCategoria(id) {
+        Swal.fire({
+            title: "Estas Seguro?",
+            text: "No podras revertir esta accion!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, Eliminar!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/Categorias/Delete" + id,
+                    method: "POST",
+                    success: function (r) {
+                        window.location = "/Categorias/Index"
+                    }
+                })
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+    }
+</script> *@
+
+

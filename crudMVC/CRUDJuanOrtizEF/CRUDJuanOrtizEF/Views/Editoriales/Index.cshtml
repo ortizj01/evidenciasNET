@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CRUDJuanOrtizEF.Editoriale>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Editorial</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Editorial</a>
+</p>
+
+<form asp-controller="Editoriales" asp-action="Index">
+    <p>
+        Buscar: <input type="text" name="buscar" class="form-text" />
+        <input type="submit" value="buscar" class="btn btn-sm btn-dark" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-orden="Nombre" asp-route-direccion="@(ViewBag.OrdenActual == "Nombre" && ViewBag.DireccionActual == "asc" ? "desc" : "asc")">
+                    @Html.DisplayNameFor(model => model.Nombres) <span class="fa-solid fa-up-down"></span>
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-orden="Telefono" asp-route-direccion="@(ViewBag.OrdenActual == "Telefono" && ViewBag.DireccionActual == "asc" ? "desc" : "asc")">
+                    @Html.DisplayNameFor(model => model.Telefono) <span class="fa-solid fa-up-down"></span>
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-orden="Direccion" asp-route-direccion="@(ViewBag.OrdenActual == "Direccion" && ViewBag.DireccionActual == "asc" ? "desc" : "asc")">
+                    @Html.DisplayNameFor(model => model.Direccion) <span class="fa-solid fa-up-down"></span>
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-orden="Email" asp-route-direccion="@(ViewBag.OrdenActual == "Email" && ViewBag.DireccionActual == "asc" ? "desc" : "asc")">
+                    @Html.DisplayNameFor(model => model.Email) <span class="fa-solid fa-up-down"></span>
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-orden="Sitioweb" asp-route-direccion="@(ViewBag.OrdenActual == "Sitioweb" && ViewBag.DireccionActual == "asc" ? "desc" : "asc")">
+                    @Html.DisplayNameFor(model => model.Sitioweb) <span class="fa-solid fa-up-down"></span>
+                </a>
+            </th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sitioweb)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.Nit">Editar</a> |
+                    <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.Nit">Detalles</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.Nit">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
